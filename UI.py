@@ -13,7 +13,8 @@ while allow == False:
     print(" ")
     match opt:
         case "1":
-            print("1")
+            while 0 != 1:
+                print("Ingreso de páginas al historial(Presione X para regresar al menu)")
         case "2":
             print("2")
         case "3":
