@@ -45,7 +45,7 @@ while allow == False:
             cont = 1
             if len(history) > 0:
                 for name in history:
-                    print(cont)
+                    print(f"Página: {cont}")
                     print(name)
                     print(" ")
                     cont = cont + 1
