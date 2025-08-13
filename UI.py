@@ -10,6 +10,7 @@ def Del(History):
         check = input(f"Está seguro de que desea eliminar el elemento {History[0]}?(S/N)")
         if check.upper() == "S":
             print(f"El elemento {History[0]} se eliminado con exito")
+            print(" ")
             return History[1:]
         elif check.upper() == "N":
             print("Regresando al menú principal")
@@ -17,6 +18,14 @@ def Del(History):
             return History
         else:
             print("La opcción seleccionada no es valida")
+def Find(History,Look):
+    count = -1
+    cont = 0
+    for name in History:
+        if name == Look:
+            count = cont
+        cont = cont + 1
+    return count
 allow = False
 exit = 0
 history = []
@@ -64,7 +73,15 @@ while allow == False:
             else:
                 print("Aún no hay ningún dato en el historial")
         case "3":
-            print("3")
+            if len(History) > 0:
+                look = input("Ingrese la página que desea encontrar: ")
+                find = Find(history,look)
+                if find == -1:
+                    print(f"La página {look} no existe dentro del historial")
+                else:
+                    print(f"Se a encontrado la página {look} en la posición {find} del historial")
+            else:
+                print("Aún no hay ningún dato en el historial ")
         case "4":
             if len(history) > 0:
                 history = Del(history)
