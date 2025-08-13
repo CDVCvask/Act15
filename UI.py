@@ -18,7 +18,7 @@ while allow == False:
                 print("Ingreso de páginas al historial")
                 print("(Presione X en cualquier momento para regresar al menu)")
                 name = input("Ingrese el nombre de la página: ")
-                if name == X:
+                if name == "X":
                     break
                 else:
                     history.append(name)
