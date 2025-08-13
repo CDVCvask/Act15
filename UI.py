@@ -10,6 +10,7 @@ exit = 0
 history = []
 while allow == False:
     Menu()
+    exit1 = 0
     opt = input("Ingrese la opción que desee: ")
     print(" ")
     match opt:
@@ -19,6 +20,9 @@ while allow == False:
                 print("(Presione X en cualquier momento para regresar al menu)")
                 name = input("Ingrese el nombre de la página: ")
                 if name == "X":
+                    print("Regresando al Menu")
+                    input(" ")
+                    print(" ")
                     break
                 else:
                     history.append(name)
@@ -30,12 +34,12 @@ while allow == False:
                             break
                         elif check.upper() == "N":
                             print("Regresando al menú principal")
-                            exit = 1
+                            exit1 = 1
                             input(" ")
                             break
                         else:
                             print("La opcción seleccionada no es valida")
-                if exit == 1:
+                if exit1 == 1:
                     break
         case "2":
             print("2")
