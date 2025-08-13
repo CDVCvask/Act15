@@ -26,6 +26,13 @@ def Find(History,Look):
             count = cont
         cont = cont + 1
     return count
+def Show(History):
+    cont = 1
+    for name in history:
+        print(f"Página: {cont}")
+        print(name)
+        print(" ")
+        cont = cont + 1
 allow = False
 exit = 0
 history = []
@@ -63,13 +70,8 @@ while allow == False:
                 if exit1 == 1:
                     break
         case "2":
-            cont = 1
             if len(history) > 0:
-                for name in history:
-                    print(f"Página: {cont}")
-                    print(name)
-                    print(" ")
-                    cont = cont + 1
+                Show(history)
             else:
                 print("Aún no hay ningún dato en el historial")
         case "3":
