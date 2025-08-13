@@ -7,6 +7,7 @@ def Menu():
     print("5.Salir del historial")
 allow = False
 exit = 0
+history = []
 while allow == False:
     Menu()
     opt = input("Ingrese la opción que desee: ")
@@ -14,7 +15,28 @@ while allow == False:
     match opt:
         case "1":
             while 0 != 1:
-                print("Ingreso de páginas al historial(Presione X para regresar al menu)")
+                print("Ingreso de páginas al historial")
+                print("(Presione X en cualquier momento para regresar al menu)")
+                name = input("Ingrese el nombre de la página: ")
+                if name == X:
+                    break
+                else:
+                    history.append(name)
+                    print("La página se a registrado correctamente.")
+                    input(" ")
+                    while 0!= 1:
+                        check = input("Desea agregar otra página? (S/N)")
+                        if check.upper() == "S":
+                            break
+                        elif check.upper() == "N":
+                            print("Regresando al menú principal")
+                            exit = 1
+                            input(" ")
+                            break
+                        else:
+                            print("La opcción seleccionada no es valida")
+                if exit == 1:
+                    break
         case "2":
             print("2")
         case "3":
