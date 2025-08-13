@@ -33,6 +33,31 @@ def Show(History):
         print(name)
         print(" ")
         cont = cont + 1
+def In(History):
+    while 0 != 1:
+        print("Ingreso de páginas al historial")
+        print("(Presione X en cualquier momento para regresar al menu)")
+        name = input("Ingrese el nombre de la página: ")
+        if name == "X":
+            print("Regresando al Menu")
+            input(" ")
+            print(" ")
+            return History
+        else:
+            history.append(name)
+            print("La página se a registrado correctamente.")
+            input(" ")
+            while 0 != 1:
+                check = input("Desea agregar otra página? (S/N)")
+                if check.upper() == "S":
+                    break
+                elif check.upper() == "N":
+                    print("Regresando al menú principal")
+                    exit1 = 1
+                    input(" ")
+                    return History
+                else:
+                    print("La opcción seleccionada no es valida")
 allow = False
 exit = 0
 history = []
@@ -43,32 +68,7 @@ while allow == False:
     print(" ")
     match opt:
         case "1":
-            while 0 != 1:
-                print("Ingreso de páginas al historial")
-                print("(Presione X en cualquier momento para regresar al menu)")
-                name = input("Ingrese el nombre de la página: ")
-                if name == "X":
-                    print("Regresando al Menu")
-                    input(" ")
-                    print(" ")
-                    break
-                else:
-                    history.append(name)
-                    print("La página se a registrado correctamente.")
-                    input(" ")
-                    while 0!= 1:
-                        check = input("Desea agregar otra página? (S/N)")
-                        if check.upper() == "S":
-                            break
-                        elif check.upper() == "N":
-                            print("Regresando al menú principal")
-                            exit1 = 1
-                            input(" ")
-                            break
-                        else:
-                            print("La opcción seleccionada no es valida")
-                if exit1 == 1:
-                    break
+            history = In(history)
         case "2":
             if len(history) > 0:
                 Show(history)
