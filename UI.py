@@ -5,6 +5,18 @@ def Menu():
     print("3.Buscar en el historial")
     print("4.Eliminar elemento más antiguo del historial")
     print("5.Salir del historial")
+def Del(History):
+    while 0 != 1:
+        check = input(f"Está seguro de que desea eliminar el elemento {History[0]}?(S/N)")
+        if check.upper() == "S":
+            print(f"El elemento {History[0]} se eliminado con exito")
+            return History[1:]
+        elif check.upper() == "N":
+            print("Regresando al menú principal")
+            input(" ")
+            return History
+        else:
+            print("La opcción seleccionada no es valida")
 allow = False
 exit = 0
 history = []
@@ -54,7 +66,10 @@ while allow == False:
         case "3":
             print("3")
         case "4":
-            print("4")
+            if len(history) > 0:
+                Del(history)
+            else:
+                print("Aún no hay ningún dato en el historial")
         case "5":
             while allow == False:
                 check = input("Está seguro de que desea salir del programa? (S/N): ")
