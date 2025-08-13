@@ -42,7 +42,15 @@ while allow == False:
                 if exit1 == 1:
                     break
         case "2":
-            print("2")
+            cont = 1
+            if len(history) > 0:
+                for name in history:
+                    print(cont)
+                    print(name)
+                    print(" ")
+                    cont = cont + 1
+            else:
+                print("Aún no hay ningún dato en el historial")
         case "3":
             print("3")
         case "4":
