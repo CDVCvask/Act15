@@ -67,7 +67,7 @@ while allow == False:
             print("3")
         case "4":
             if len(history) > 0:
-                Del(history)
+                history = Del(history)
             else:
                 print("Aún no hay ningún dato en el historial")
         case "5":
